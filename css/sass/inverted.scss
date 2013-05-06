@@ -1,0 +1,145 @@
+body.inverted {
+	background-color: $offwhite;
+	color: $near-black;
+
+	.site-title {
+		a, a:visited, a:active {
+			@include text-blur(3px, $near-black);
+		}
+
+		a:hover {
+			text-shadow: none;
+			text-decoration: none;
+			color: $near-black;
+			border-bottom: solid 1px $near-black;	
+		}
+	}
+
+	hr {
+		background-color: $near-black;
+	}
+
+	/* Links */
+	a {
+		@include text-blur(2px, $near-black);
+
+		&:visited {
+			@include text-blur(2px, $near-black);
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $near-black;
+			text-shadow: none;
+		}
+	}
+
+	/* =Menu
+	----------------------------------------------- */
+
+	.navigation-main {
+		ul {
+			ul {
+				li {
+				}
+				//these nests don't seem to be working
+				:hover > a {
+					color: red;
+				}
+				a:hover {
+					color: red;
+				}
+				//end not working
+			}
+		}
+
+		a {
+			@include text-blur(2px, $near-black);
+		}
+
+	//to be nested
+		li:hover > a {
+			text-shadow: none;
+			color: $near-black;
+		}
+
+	/*
+	*	tryed to nest these but doesn't seem to be working
+	*	uncomment if you get round to requiring a menu this complex
+	*
+		ul ul :hover > a {
+		}
+		ul ul a:hover {
+		}
+	*/	ul li:hover > ul {
+			display: block;
+		}
+	//end to be nested
+
+		li.current_page_item a,
+		li.current-menu-item a {
+			color: $near-black;
+		}
+	} //end .navigation-main
+
+	/* =Content
+	----------------------------------------------- */
+
+	.divide {
+		background-color: $near-black;
+	}
+
+	.divide-char {
+		background-color: $offwhite;
+	}
+
+	.entry-header {
+		.entry-title {
+			a {
+				color: $near-black;
+			}
+		}
+	}
+
+	pre { /* SCRIDDLE */
+		background: $offwhite;
+		border: solid 1.5px $near-black;
+	}
+
+	/* =Input Elements
+	----------------------------------------------- */
+
+	button,
+	html input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		-webkit-box-shadow: inset 0 0.5px 0 $offwhite, inset 0 0px 6px $offwhite, inset 0 0px 0px $near-black;
+		-moz-box-shadow:    inset 0 0.5px 0 $offwhite, inset 0 0px 6px $offwhite, inset 0 0px 0px $near-black;
+		box-shadow:         inset 0 0.5px 0 $offwhite, inset 0 0px 6px $offwhite, inset 0 0px 0px $near-black;
+
+		background-color: $near-black;
+		color: $offwhite;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="search"],
+	textarea { 
+		color: $near-black;
+		background-color: $white;
+
+		border: 1px solid $near-black;
+		border-radius: 3px;
+	}
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	input[type="search"]:focus,
+	textarea:focus {
+		color: $near-black;
+	}
+
+
+}
