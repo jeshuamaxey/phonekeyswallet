@@ -13,10 +13,17 @@ and Blueprint http://www.blueprintcss.org/
 /* =Twitter Bootstrap
 ----------------------------------------------- */
 @import "bootstrap";
-@import "bootstrap-responsive";
+//@import "bootstrap-responsive";
 
 /* =Global
 ----------------------------------------------- */
+
+#impress {
+	//width: 100%;
+}
+.slide .step {
+	width: 80%;
+}
 
 
 /* =Media Queries / Responsive Styles Imports

@@ -13,17 +13,24 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
+    <body class="impress-not-supported">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="container">
-            <div class="hero-unit question begin">
+    <!--
+        <div class="fallback-message">
+            <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+        </div>
+    -->
+        <!-- start app -->
+        <div id="impress" class="container">
+            <div class="step xslide hero-unit question begin" data-x="0" data-y="0" data-scale="1">
                 <h2>Begin</h2>
             </div>
-            <div class="hero-unit question gender">
+            <div class="step xslide hero-unit question gender" data-x="0" data-y="1000">
                 <h2>Are you...</h2>
                 <img src="img/icons/male.svg">
                 <img src="img/icons/female.svg">
@@ -32,7 +39,7 @@
                     <button class="btn btn-info">Female</button>
                 </div>
             </div>
-            <div class="hero-unit question phone">
+            <div class="step xslide hero-unit question phone" data-x="0" data-y="2000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/phone.svg">
                 <div class="yorn">
@@ -40,7 +47,7 @@
                     <button class="btn btn-danger">No</button>
                 </div>
             </div>
-            <div class="hero-unit question keys">
+            <div class="step xslide hero-unit question keys" data-x="0" data-y="3000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/keys.svg">
                 <div class="yorn">
@@ -48,7 +55,7 @@
                     <button class="btn btn-danger">No</button>
                 </div>
             </div>
-            <div class="hero-unit question wallet">
+            <div class="step xslide hero-unit question wallet" data-x="0" data-y="4000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/wallet.svg">
                 <div class="yorn">
@@ -56,7 +63,7 @@
                     <button class="btn btn-danger">No</button>
                 </div>
             </div>
-            <div class="hero-unit question">
+            <div class="step xslide hero-unit question bag" data-x="0" data-y="5000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/bag.svg">
                 <div class="yorn">
@@ -70,6 +77,7 @@
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script src="js/impress.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
