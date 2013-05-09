@@ -18,11 +18,27 @@ and Blueprint http://www.blueprintcss.org/
 /* =Global
 ----------------------------------------------- */
 
+html {
+	//ensure users cannot brose the app by scrolling
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+
 #impress {
 	//width: 100%;
+
+	&>:first-child {
+		//impress wraps all presentatin content in a div on runtime
+		//this rule makes that div width 100% to allow for relative
+		//sizing of slides within it
+		width: 100%;
+	}
 }
-.slide .step {
+.step {
 	width: 80%;
+	border: solid 1px black;
+	text-align: center;
 }
 
 

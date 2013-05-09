@@ -5284,8 +5284,18 @@ a.badge:focus {
 
 /* =Global
 ----------------------------------------------- */
-.slide .step {
-  width: 80%; }
+html {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden; }
+
+#impress > :first-child {
+  width: 100%; }
+
+.step {
+  width: 80%;
+  border: solid 1px black;
+  text-align: center; }
 
 /* =Media Queries / Responsive Styles Imports
 ----------------------------------------------- */
