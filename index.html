@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Phone Keys Wallet</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- one stylesheet to rule them all -->
@@ -27,19 +27,19 @@
     -->
         <!-- start app -->
         <div id="impress" class="container">
-            <div class="step slide hero-unit question begin" data-x="-3000" data-y="0" data-scale="1">
+            <div id="" class="step slide hero-unit question begin" data-x="0" data-y="0" data-scale="1">
                 <h2>Begin</h2>
             </div>
-            <div class="step slide hero-unit question gender" data-x="0" data-y="1000">
+            <div id="gender" class="step slide hero-unit question gender" data-x="0" data-y="1000">
                 <h2>Are you...</h2>
                 <img src="img/icons/male.svg">
                 <img src="img/icons/female.svg">
                 <div class="yorn">
-                    <button class="btn btn-info male">Male</button>
-                    <button class="btn btn-info female">Female</button>
+                    <button whereNext=gotPhone class="btn btn-info male">Male</button>
+                    <button whereNext=gotBag class="btn btn-info female">Female</button>
                 </div>
             </div>
-            <div class="step slide hero-unit question phone" data-x="-3000" data-y="2000">
+            <div id="gotPhone" class="step slide hero-unit question phone" data-x="-3000" data-y="2000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/phone.svg">
                 <div class="yorn">
@@ -47,7 +47,7 @@
                     <button whereNext=noPhone class="btn btn-danger">No</button>
                 </div>
             </div>
-            <div class="step slide hero-unit question keys" data-x="-3000" data-y="3000">
+            <div id="gotKeys" class="step slide hero-unit question keys" data-x="-3000" data-y="3000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/keys.svg">
                 <div class="yorn">
@@ -55,7 +55,7 @@
                     <button whereNext=noKeys class="btn btn-danger">No</button>
                 </div>
             </div>
-            <div class="step slide hero-unit question wallet" data-x="-3000" data-y="4000">
+            <div id="gotWallet" class="step slide hero-unit question wallet" data-x="-3000" data-y="4000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/wallet.svg">
                 <div class="yorn">
@@ -63,7 +63,7 @@
                     <button whereNext=noWallet class="btn btn-danger">No</button>
                 </div>
             </div>
-            <div class="step slide hero-unit question bag" data-x="3000" data-y="3000">
+            <div id="gotBag" class="step slide hero-unit question bag" data-x="3000" data-y="3000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/bag.svg">
                 <div class="yorn">
