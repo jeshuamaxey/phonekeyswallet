@@ -25,6 +25,10 @@ html {
 	overflow: hidden;
 }
 
+body {
+	background: url('../img/bg.png');
+}
+
 #impress {
 	//width: 100%;
 
@@ -34,10 +38,32 @@ html {
 		//sizing of slides within it
 		width: 100%;
 	}
-}
-.step {
-	width: 80%;
-	text-align: center;
+	.step {
+		width: 80%;
+		text-align: center;
+
+		border: solid black 1px;
+		
+		-moz-box-shadow:    10px 10px 25px 10px #ccc;
+		-webkit-box-shadow: 10px 10px 25px 10px #ccc;
+		box-shadow:         10px 10px 25px 10px #ccc;
+		h2 {
+			font-size: 3.5em;
+			margin-bottom: 0.5em;
+		}
+		h3 {
+			display: inline;
+			margin: 0 10px;
+		}
+		img {
+			height: 180px;
+			margin-bottom: 20px;
+		}
+		.btn {
+			font-size: 3.0em;
+			height: 1.5em;
+		}
+	}
 }
 
 

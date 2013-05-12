@@ -5289,12 +5289,30 @@ html {
   max-height: 100%;
   overflow: hidden; }
 
+body {
+  background: url("../img/bg.png"); }
+
 #impress > :first-child {
   width: 100%; }
-
-.step {
+#impress .step {
   width: 80%;
-  text-align: center; }
+  text-align: center;
+  border: solid black 1px;
+  -moz-box-shadow: 10px 10px 25px 10px #ccc;
+  -webkit-box-shadow: 10px 10px 25px 10px #ccc;
+  box-shadow: 10px 10px 25px 10px #ccc; }
+  #impress .step h2 {
+    font-size: 3.5em;
+    margin-bottom: 0.5em; }
+  #impress .step h3 {
+    display: inline;
+    margin: 0 10px; }
+  #impress .step img {
+    height: 180px;
+    margin-bottom: 20px; }
+  #impress .step .btn {
+    font-size: 3.0em;
+    height: 1.5em; }
 
 /* =Media Queries / Responsive Styles Imports
 ----------------------------------------------- */
