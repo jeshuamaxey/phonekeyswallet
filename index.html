@@ -51,6 +51,7 @@
                 <img src="img/icons/phone.svg">
                 <div class="yorn">
                     <button whereNext=gotKeys class="btn btn-success">Yes</button>
+                    <h3>or</h3>
                     <button whereNext=noPhone class="btn btn-danger">No</button>
                 </div>
             </div>
@@ -59,6 +60,7 @@
                 <img src="img/icons/keys.svg">
                 <div class="yorn">
                     <button whereNext=gotWallet class="btn btn-success">Yes</button>
+                    <h3>or</h3>
                     <button whereNext=noKeys class="btn btn-danger">No</button>
                 </div>
             </div>
@@ -67,6 +69,7 @@
                 <img src="img/icons/wallet.svg">
                 <div class="yorn">
                     <button whereNext=allSet class="btn btn-success">Yes</button>
+                    <h3>or</h3>
                     <button whereNext=noWallet class="btn btn-danger">No</button>
                 </div>
             </div>
@@ -75,6 +78,7 @@
                 <img src="img/icons/bag.svg">
                 <div class="yorn">
                     <button whereNext=intermediate-three postIntermediate=allSet class="btn btn-success">Yes</button>
+                    <h3>or</h3>
                     <button whereNext=noBag class="btn btn-danger">No</button>
                 </div>
             </div>
@@ -82,10 +86,10 @@
 
             <div id="allSet" class="step slide hero-unit" data-x="0" data-y="4000">
                 <h1>You're All Set!</h1>
-                <p>Now let the world know that you're a prepared Percy or ready Rachel.</p>
+                <p>Now let the world know that you're a <span id="isMale">prepared Percy</span><span id="isFemale">ready Rachel</span>.</p>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-text="I just made absolutely sure I'm ready to leave the house thanks to @jeshuamaxey" data-size="large" data-hashtags="phoneKeysWallet" data-dnt="true">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            </div>
+                <div class="fb-like" data-send="false" data-width="275" data-show-faces="false" data-font="arial" data-colorscheme="dark"></div>
+                </div>
         </div>
         
 
@@ -94,5 +98,20 @@
         <script src="js/bootstrap.js"></script>
         <script src="js/impress.js"></script>
         <script src="js/main.js"></script>
+        <div id="fb-root"></div>
+        <!-- twitter plugin js -->
+        <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+        <!-- facebook plugin js -->
+        <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
     </body>
 </html>

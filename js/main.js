@@ -11,10 +11,11 @@ $(document).ready(function() {
 	$('.btn-success').click(yesClick);
 	$('.btn-danger').click(noClick);
 	*/
-	$('.btn').click(overlord);
+	$('.btn').click(buttonClickHandler);
+	$('.btn-info').click(setGender);
 });
 
-function overlord() {
+function buttonClickHandler() {
 	//stopPropagation required because clicking on an element in impress.js
 	//automatically makes that element's slide the focus. We want to stop
 	//this so we can control the user's navigation through the flowchart
@@ -38,4 +39,15 @@ $('.intermediate').bind('impress:stepenter', function() {
 	}
 	console.log('intermediate entered. postIntermediate = '+ pkw.postIntermediate);
 	impress().goto(pkw.postIntermediate);
-})
+});
+
+function setGender() {
+	console.log(99);
+	var gender = $(this).html();
+	console.log(gender);
+	if(gender == 'Male') {
+		$('#isFemale').hide();
+	} else if(gender == 'Female') {
+		$('#isMale').hide();
+	}
+}
