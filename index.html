@@ -29,7 +29,7 @@
         <div id="impress" class="container">
             <div id="begin" class="step slide hero-unit question begin" data-x="0" data-y="0" data-scale="1">
                 <h2>Ready?</h2>
-                <button whereNext=gender class="btn">Begin</button>
+                <button whereNext=gender class="btn btn-inverse">Begin</button>
             </div>
             <div id="gender" class="step slide hero-unit question gender" data-x="0" data-y="1000">
                 <h2>Are you...</h2>
@@ -52,7 +52,7 @@
                 <div class="yorn">
                     <button whereNext=gotKeys class="btn btn-success">Yes</button>
                     <h3>or</h3>
-                    <button whereNext=noPhone class="btn btn-danger">No</button>
+                    <button whereNext=noPhone missing=phone class="btn btn-danger">No</button>
                 </div>
             </div>
             <div id="gotKeys" class="step slide hero-unit question keys" data-x="-3000" data-y="3000">
@@ -61,7 +61,7 @@
                 <div class="yorn">
                     <button whereNext=gotWallet class="btn btn-success">Yes</button>
                     <h3>or</h3>
-                    <button whereNext=noKeys class="btn btn-danger">No</button>
+                    <button whereNext=noKeys missing=keys class="btn btn-danger">No</button>
                 </div>
             </div>
             <div id="gotWallet" class="step slide hero-unit question wallet" data-x="-3000" data-y="4000">
@@ -70,7 +70,7 @@
                 <div class="yorn">
                     <button whereNext=allSet class="btn btn-success">Yes</button>
                     <h3>or</h3>
-                    <button whereNext=noWallet class="btn btn-danger">No</button>
+                    <button whereNext=noWallet missing=wallet class="btn btn-danger">No</button>
                 </div>
             </div>
             <div id="gotBag" class="step slide hero-unit question bag" data-x="3000" data-y="3000">
@@ -79,7 +79,7 @@
                 <div class="yorn">
                     <button whereNext=intermediate-three postIntermediate=allSet class="btn btn-success">Yes</button>
                     <h3>or</h3>
-                    <button whereNext=noBag class="btn btn-danger">No</button>
+                    <button whereNext=noBag missing=bag class="btn btn-danger">No</button>
                 </div>
             </div>
             <div id="intermediate-three" class="step slide hero-unit intermediate" data-x="3000" data-y="4000"></div>

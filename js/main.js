@@ -2,20 +2,24 @@ var pkw = {};
 
 $(document).ready(function() {
 	impress().init();
-
-	//add event listeners that will cue movements through the app
 	/*
-	$('.btn-info.male').click(startMale);
-	$('.btn-info.female').click(startFemale);
-
-	$('.btn-success').click(yesClick);
-	$('.btn-danger').click(noClick);
+	* master event listener - this guides the
+	* majority of navigation through the app
 	*/
-	$('.btn').click(buttonClickHandler);
+	$('.btn').click(buttonClickYes);
+	/*
+	* flashes up a warning if the item
+	* is not in possession
+	*/
+	$('.btn-danger').click(buttonClickNo);
+	/*
+	* cute trick which sets name of correct
+	* gender on last step of the app
+	*/
 	$('.btn-info').click(setGender);
 });
 
-function buttonClickHandler() {
+function buttonClickYes() {
 	//stopPropagation required because clicking on an element in impress.js
 	//automatically makes that element's slide the focus. We want to stop
 	//this so we can control the user's navigation through the flowchart
@@ -28,6 +32,13 @@ function buttonClickHandler() {
 	pkw.nextQ = $(this).attr('whereNext');
 	//console.log(pkw);
 	impress().goto(pkw.nextQ);
+}
+
+function buttonClickNo() {
+	//store missing item
+	pkw.missing = $(this).attr('missing');
+	console.log('missing:' + pkw.missing);
+
 }
 
 $('.intermediate').bind('impress:stepenter', function() {
