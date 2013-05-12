@@ -5292,6 +5292,9 @@ html {
 body {
   background: url("../img/bg.png"); }
 
+.warning-message.hidden {
+  display: none; }
+
 #impress > :first-child {
   width: 100%; }
 #impress .step {

@@ -12,6 +12,7 @@ $(document).ready(function() {
 	* is not in possession
 	*/
 	$('.btn-danger').click(buttonClickNo);
+	$('#closeWarning').click(closeWarning);
 	/*
 	* cute trick which sets name of correct
 	* gender on last step of the app
@@ -38,7 +39,11 @@ function buttonClickNo() {
 	//store missing item
 	pkw.missing = $(this).attr('missing');
 	console.log('missing:' + pkw.missing);
+	$('#warning').show();
+}
 
+function closeWarning() {
+	$('#warning').hide();
 }
 
 $('.intermediate').bind('impress:stepenter', function() {
