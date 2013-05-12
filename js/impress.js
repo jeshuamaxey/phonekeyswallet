@@ -21,6 +21,29 @@
 
 // You are one of those who like to know how thing work inside?
 // Let me show you the cogs that make impress.js run...
+
+/*
+*
+*
+
+oooo     oooo  o      oooooooooo  oooo   oooo ooooo oooo   oooo  ooooooo8  
+ 88   88  88  888      888    888  8888o  88   888   8888o  88 o888    88  
+  88 888 88  8  88     888oooo88   88 888o88   888   88 888o88 888    oooo 
+   888 888  8oooo88    888  88o    88   8888   888   88   8888 888o    88  
+    8   8 o88o  o888o o888o  88o8 o88o    88  o888o o88o    88  888ooo888 
+
+*
+*   I HAVE EDITED THIS VERSION OF IMPRESS TO DISABLE NAVIGATION WITH THE
+*   KEYS - IF YOU WANT TO RE-ENABLE THIS FUNCTIONALITY, GO TO LINE 729 ish
+*
+*   LATER I MAY ADD A BOOL TO THE TOP OF THIS FILE TO EASILY TURN THIS ON
+*   AND OFF FOR A KIND OF 'DEV MODE' FEATURE
+*
+*   JOSH
+*
+*/
+
+
 (function ( document, window ) {
     'use strict';
     
@@ -702,6 +725,9 @@
         //   as another way to moving to next step... And yes, I know that for the sake of
         //   consistency I should add [shift+tab] as opposite action...
         document.addEventListener("keyup", function ( event ) {
+            console.log('dir button nav diabled');
+            /* Commented out impress button nav functionality
+            *************************************************
             if ( event.keyCode === 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 37 && event.keyCode <= 40) ) {
                 switch( event.keyCode ) {
                     case 33: // pg up
@@ -719,7 +745,9 @@
                 }
                 
                 event.preventDefault();
+                
             }
+            */
         }, false);
         
         // delegated handler for clicking on the links to presentation steps
