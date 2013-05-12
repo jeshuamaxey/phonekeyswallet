@@ -1,3 +1,5 @@
+var pkw = {};
+
 $(document).ready(function() {
 	impress().init();
 
@@ -17,30 +19,23 @@ function overlord() {
 	//automatically makes that element's slide the focus. We want to stop
 	//this so we can control the user's navigation through the flowchart
 	event.stopPropagation();
-	var next = $(this).attr('whereNext');
-	console.log(next);
-	impress().goto(next);
+	//store where to go after the intermediate slide when applicable
+	//this variable will be used if the wehreNext attribute of a
+	//step points to an intermediate step
+	pkw.postIntermediate = $(this).attr('postIntermediate') || '';
+	//store where to go next
+	pkw.nextQ = $(this).attr('whereNext');
+	//console.log(pkw);
+	impress().goto(pkw.nextQ);
 }
 
-/*
-
-function yesClick() {
-	var next = $(this).attr('whereNext');
-	console.log(next);
-//	console.log(event);
-	impress().goto(next);
-}
-
-function noClick() {
-	console.log($(this).attr('whereNext'));
-}
-
-function startMale() {
-	console.log('male');
-}
-
-function startFemale() {
-	console.log('female');
-}
-
-*/
+$('.intermediate').bind('impress:stepenter', function() {
+	if($(this).attr('postIntermediate')) {
+		//update the postIntermediate value if it exisits
+		//one should exisit only for an extended chain of
+		//intermediate steps
+		pkw.postIntermediate = $(this).attr('postIntermediate');
+	}
+	console.log('intermediate entered. postIntermediate = '+ pkw.postIntermediate);
+	impress().goto(pkw.postIntermediate);
+})

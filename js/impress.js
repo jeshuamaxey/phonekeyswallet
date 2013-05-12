@@ -34,14 +34,14 @@ oooo     oooo  o      oooooooooo  oooo   oooo ooooo oooo   oooo  ooooooo8
 
 *
 *   I HAVE EDITED THIS VERSION OF IMPRESS TO DISABLE NAVIGATION WITH THE
-*   KEYS - IF YOU WANT TO RE-ENABLE THIS FUNCTIONALITY, GO TO LINE 729 ish
-*
-*   LATER I MAY ADD A BOOL TO THE TOP OF THIS FILE TO EASILY TURN THIS ON
-*   AND OFF FOR A KIND OF 'DEV MODE' FEATURE
+*   KEYS - IF YOU WANT TO RE-ENABLE THIS FUNCTIONALITY, SIMPLY SET THE 
+*   VAR window.allowDirKeyNav to 1.
 *
 *   JOSH
 *
 */
+
+window.allowDirKeyNav = 1; //0 disables nav - 1 enables nav
 
 
 (function ( document, window ) {
@@ -724,32 +724,30 @@ oooo     oooo  o      oooooooooo  oooo   oooo ooooo oooo   oooo  ooooooo8
         //   positioning. I didn't want to just prevent this default action, so I used [tab]
         //   as another way to moving to next step... And yes, I know that for the sake of
         //   consistency I should add [shift+tab] as opposite action...
-        document.addEventListener("keyup", function ( event ) {
-            console.log('dir button nav diabled');
-            /* Commented out impress button nav functionality
-            *************************************************
-            if ( event.keyCode === 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 37 && event.keyCode <= 40) ) {
-                switch( event.keyCode ) {
-                    case 33: // pg up
-                    case 37: // left
-                    case 38: // up
-                             api.prev();
-                             break;
-                    case 9:  // tab
-                    case 32: // space
-                    case 34: // pg down
-                    case 39: // right
-                    case 40: // down
-                             api.next();
-                             break;
+        if(window.allowDirKeyNav) {
+            document.addEventListener("keyup", function ( event ) {
+                if ( event.keyCode === 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 37 && event.keyCode <= 40) ) {
+                    switch( event.keyCode ) {
+                        case 33: // pg up
+                        case 37: // left
+                        case 38: // up
+                                 api.prev();
+                                 break;
+                        case 9:  // tab
+                        case 32: // space
+                        case 34: // pg down
+                        case 39: // right
+                        case 40: // down
+                                 api.next();
+                                 break;
+                    }
+                    event.preventDefault();
                 }
-                
-                event.preventDefault();
-                
-            }
-            */
-        }, false);
-        
+            }, false);
+        } else {
+            console.log('dir button nav disabled');
+        }
+
         // delegated handler for clicking on the links to presentation steps
         document.addEventListener("click", function ( event ) {
             // event delegation with "bubbling"

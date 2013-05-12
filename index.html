@@ -28,17 +28,23 @@
         <!-- start app -->
         <div id="impress" class="container">
             <div id="" class="step slide hero-unit question begin" data-x="0" data-y="0" data-scale="1">
-                <h2>Begin</h2>
+                <h1>Ready?</h1>
+                <button whereNext=gender class="btn">Begin</button>
             </div>
             <div id="gender" class="step slide hero-unit question gender" data-x="0" data-y="1000">
                 <h2>Are you...</h2>
                 <img src="img/icons/male.svg">
                 <img src="img/icons/female.svg">
                 <div class="yorn">
-                    <button whereNext=gotPhone class="btn btn-info male">Male</button>
-                    <button whereNext=gotBag class="btn btn-info female">Female</button>
+                    <button whereNext=intermediate-one postIntermediate=gotPhone class="btn btn-info male">Male</button>
+                    <button whereNext=intermediate-one postIntermediate=intermediate-two class="btn btn-info female">Female</button>
                 </div>
             </div>
+            
+            <div id="intermediate-one" class="step slide hero-unit intermediate" data-x="0" data-y="2000"></div>
+
+            <div id="intermediate-two"  postIntermediate=gotBag class="step slide hero-unit intermediate" data-x="3000" data-y="2000"></div>
+
             <div id="gotPhone" class="step slide hero-unit question phone" data-x="-3000" data-y="2000">
                 <h2>Have you got your...</h2>
                 <img src="img/icons/phone.svg">
@@ -67,9 +73,14 @@
                 <h2>Have you got your...</h2>
                 <img src="img/icons/bag.svg">
                 <div class="yorn">
-                    <button whereNext=allSet class="btn btn-success">Yes</button>
+                    <button whereNext=intermediate-three postIntermediate=allSet class="btn btn-success">Yes</button>
                     <button whereNext=noBag class="btn btn-danger">No</button>
                 </div>
+            </div>
+            <div id="intermediate-three" class="step slide hero-unit intermediate" data-x="3000" data-y="4000"></div>
+
+            <div id="allSet" class="step slide hero-unit" data-x="0" data-y="4000">
+                <h1>You're All Set!</h1>
             </div>
         </div>
         
