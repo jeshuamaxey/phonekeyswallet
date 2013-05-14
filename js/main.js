@@ -114,6 +114,8 @@ function enableTerminal() {
 				if($('.current-line').html().length > pkw.terminalprompt.length) {
 					$('.current-line').html($('.current-line').html().substring(0, $('.current-line').html().length - 1));
 				}
+				break;
+			//case 32: //spacebar
 			case 37:
 			case 38:
 			case 39:

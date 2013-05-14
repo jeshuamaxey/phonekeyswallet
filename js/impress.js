@@ -41,7 +41,7 @@ oooo     oooo  o      oooooooooo  oooo   oooo ooooo oooo   oooo  ooooooo8
 *
 */
 
-window.allowDirKeyNav = 1; //0 disables nav - 1 enables nav
+window.allowDirKeyNav = 0; //0 disables nav - 1 enables nav
 
 
 (function ( document, window ) {
