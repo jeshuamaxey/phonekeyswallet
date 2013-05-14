@@ -1,4 +1,6 @@
-var pkw = {};
+var pkw = {
+	terminalprompt: '-bash-3.2$ '
+};
 
 $(document).ready(function() {
 	impress().init();
@@ -18,6 +20,22 @@ $(document).ready(function() {
 	* gender on last step of the app
 	*/
 	$('.btn-info').click(setGender);
+	/*
+	* blink the cursor in the terminal
+	*/
+	window.setInterval(function() {
+		$('.blinking').toggle();
+	}, 400);
+	/*
+	*
+	*/
+	window.setInterval(function() {
+		if(!$('#terminal').hasClass('hidden')) {
+			enableTerminal();
+		} else {
+			resetTerminal();
+		}
+	}, 300); //end setTimeout
 });
 
 function buttonClickYes() {
@@ -39,11 +57,20 @@ function buttonClickNo() {
 	//store missing item
 	pkw.missing = $(this).attr('missing');
 	console.log('missing:' + pkw.missing);
-	$('#warning').show();
+	$('#warning #item').html(pkw.missing);	
+	//$('#warning').fadeIn();
+	$('#terminal').slideDown(1000, function() {
+		$(this).removeClass('hidden');
+	});
+	$('.present').fadeOut();
 }
 
 function closeWarning() {
-	$('#warning').hide();
+	$('#terminal').fadeOut(400, function() {
+		$(this).addClass('hidden');
+	});
+	//$('#warning').fadeOut();
+	$('.present').fadeIn();
 }
 
 $('.intermediate').bind('impress:stepenter', function() {
@@ -66,4 +93,53 @@ function setGender() {
 	} else if(gender == 'Female') {
 		$('#isMale').hide();
 	}
+}
+
+function enableTerminal() {
+	console.log('terminal enabled');
+
+	document.body.onkeydown = function(e){
+		e = e || window.event;
+		switch(e.keyCode) {
+			case 13: //enter key
+				console.log('hit enter');
+				runCommand($('.current-line').html().substring(pkw.terminalprompt.length,$('.current-line').html().length));
+				newLine();
+				break;
+			case 8: //backspace
+				console.log('hit backspace');
+				//stop the browser navigating back
+				e.preventDefault();
+				//awesome jQuery work to delete last char BOOM!
+				if($('.current-line').html().length > pkw.terminalprompt.length) {
+					$('.current-line').html($('.current-line').html().substring(0, $('.current-line').html().length - 1));
+				}
+			case 37:
+			case 38:
+			case 39:
+			case 40:
+				//arrow keys
+				break;
+			default:
+				//add new char before the cursor
+				$('.current-line').append(String.fromCharCode(e.keyCode));
+				break;
+		}
+		
+	};
+
+}
+
+function newLine() {
+	$('.current-line').removeClass('current-line');
+	$('.blinking').removeClass('blinking');
+	$('#terminal li:last').after('<li class="line"><span class="line-content current-line">'+pkw.terminalprompt+'</span><span class="cursor blinking"></span></li>')
+}
+
+function runCommand(command) {
+	console.log(command);
+}
+function resetTerminal() {
+	console.log('terminal reset');
+	document.body.onkeydown = function(e){};
 }

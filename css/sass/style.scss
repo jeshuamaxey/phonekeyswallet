@@ -18,6 +18,10 @@ and Blueprint http://www.blueprintcss.org/
 /* =Global
 ----------------------------------------------- */
 
+//variables
+
+$terminal-colour: green;
+
 html {
 	//ensure users cannot brose the app by scrolling
 	max-width: 100%;
@@ -30,6 +34,46 @@ body {
 }
 
 .warning-message {
+	&.hidden {
+		display: none;
+	}
+}
+
+.terminal {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+
+	padding-top: 30px;
+
+	background: black;
+	color: $terminal-colour;
+	font-family: 'Courier New', 'Courier', monospace;
+
+	ul.terminal-content {
+		list-style: none;
+		
+		li {
+			display: block;
+			line-height: 35px;
+			font-size: 2.0em;
+			vertical-align: top;
+		}
+		.cursor {
+			&:not(blinking) {
+				display: none;
+			}
+			&.blinking {
+				display: inline-block;
+			}
+			background: $terminal-colour;
+			position: relative;
+			height: 25px;
+			width: 2px;
+			top: 4px;
+		}
+	}
+
 	&.hidden {
 		display: none;
 	}
@@ -68,6 +112,13 @@ body {
 		.btn {
 			font-size: 3.0em;
 			height: 1.5em;
+
+			&.go-again {
+				display: block;
+				margin: 10px auto;
+				font-size: 2.0em;
+				height: 1.5em;
+			}
 		}
 	}
 }

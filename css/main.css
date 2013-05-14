@@ -5295,6 +5295,34 @@ body {
 .warning-message.hidden {
   display: none; }
 
+.terminal {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 30px;
+  background: black;
+  color: green;
+  font-family: 'Courier New', 'Courier', monospace; }
+  .terminal ul.terminal-content {
+    list-style: none; }
+    .terminal ul.terminal-content li {
+      display: block;
+      line-height: 35px;
+      font-size: 2.0em;
+      vertical-align: top; }
+    .terminal ul.terminal-content .cursor {
+      background: green;
+      position: relative;
+      height: 25px;
+      width: 2px;
+      top: 4px; }
+      .terminal ul.terminal-content .cursor:not(blinking) {
+        display: none; }
+      .terminal ul.terminal-content .cursor.blinking {
+        display: inline-block; }
+  .terminal.hidden {
+    display: none; }
+
 #impress > :first-child {
   width: 100%; }
 #impress .step {
@@ -5316,6 +5344,11 @@ body {
   #impress .step .btn {
     font-size: 3.0em;
     height: 1.5em; }
+    #impress .step .btn.go-again {
+      display: block;
+      margin: 10px auto;
+      font-size: 2.0em;
+      height: 1.5em; }
 
 /* =Media Queries / Responsive Styles Imports
 ----------------------------------------------- */
