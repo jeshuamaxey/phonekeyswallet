@@ -52,6 +52,7 @@ body {
 
 	ul.terminal-content {
 		list-style: none;
+		overflow: scroll;
 		
 		li {
 			display: block;

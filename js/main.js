@@ -14,7 +14,6 @@ $(document).ready(function() {
 	* is not in possession
 	*/
 	$('.btn-danger').click(buttonClickNo);
-	$('#closeWarning').click(closeWarning);
 	/*
 	* cute trick which sets name of correct
 	* gender on last step of the app
@@ -65,7 +64,7 @@ function buttonClickNo() {
 	$('.present').fadeOut();
 }
 
-function closeWarning() {
+function closeTerminal() {
 	$('#terminal').fadeOut(400, function() {
 		$(this).addClass('hidden');
 	});
@@ -97,7 +96,6 @@ function setGender() {
 
 function enableTerminal() {
 	console.log('terminal enabled');
-
 	document.body.onkeydown = function(e){
 		e = e || window.event;
 		switch(e.keyCode) {
@@ -116,11 +114,12 @@ function enableTerminal() {
 				}
 				break;
 			//case 32: //spacebar
-			case 37:
-			case 38:
-			case 39:
-			case 40:
-				//arrow keys
+			case 37: //arrow keys
+			case 38: //arrow keys
+			case 39: //arrow keys
+			case 40: //arrow keys
+			case 91: //cmd key left
+			case 93: //cmd key right
 				break;
 			default:
 				//add new char before the cursor
@@ -132,14 +131,24 @@ function enableTerminal() {
 
 }
 
+//generates and moves cursor to new line in terminal
 function newLine() {
 	$('.current-line').removeClass('current-line');
 	$('.blinking').removeClass('blinking');
 	$('#terminal li:last').after('<li class="line"><span class="line-content current-line">'+pkw.terminalprompt+'</span><span class="cursor blinking"></span></li>')
 }
 
+//runs the command entered at the terminal
 function runCommand(command) {
 	console.log(command);
+	switch(command.toLowerCase()) {
+		case 'exit':
+			console.log('bye bye');
+			closeTerminal();
+			break;
+		default:
+			break;
+	}
 }
 function resetTerminal() {
 	console.log('terminal reset');

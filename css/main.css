@@ -5304,7 +5304,8 @@ body {
   color: green;
   font-family: 'Courier New', 'Courier', monospace; }
   .terminal ul.terminal-content {
-    list-style: none; }
+    list-style: none;
+    overflow: scroll; }
     .terminal ul.terminal-content li {
       display: block;
       line-height: 35px;
