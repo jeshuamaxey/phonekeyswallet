@@ -5,6 +5,17 @@ var pkw = {
 $(document).ready(function() {
 	impress().init();
 	/*
+	* thanks to the wonderful Sindre Sorhus for screenfull.js
+	* https://github.com/sindresorhus/screenfull.js
+	*/
+	$('#fullscreen').click(function() {
+	    if (screenfull.enabled) {
+	        screenfull.request();
+	    } else {
+	        // Ignore or do something else
+	    }
+	});
+	/*
 	* master event listener - this guides the
 	* majority of navigation through the app
 	*/

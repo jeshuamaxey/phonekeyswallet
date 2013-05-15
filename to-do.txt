@@ -1,0 +1,13 @@
+# To Do List
+
+## Terminal
+- up/down arrows scroll through history
+- cursor always dissapear's from previous line
+- add scary soundtrack (see soundcloud)
+
+## Flowchart
+- fix fullscren
+- add pleasant soundtrack
+- add settings to the back of first step
+  * fullscreen?
+  * sound on/off

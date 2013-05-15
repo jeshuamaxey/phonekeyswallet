@@ -17,14 +17,6 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
-        <!-- Add your site or application content here -->
-    <!--
-        <div class="fallback-message">
-            <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
-        </div>
-    -->
         <!-- start app -->
         <div id="warning" class="warning-message hidden">
             <h2>What do you mean you haven't got your <span id="item"></span>?</h2>
@@ -38,7 +30,12 @@
                 <h2>Ready?</h2>
                 <button id="fullscreen" class="btn btn-inverse">Fullscreen</button>
                 <button whereNext=gender class="btn btn-inverse">Begin</button>
-            </div>
+                <button whereNext=settings class="btn btn-inverse">Settings</button>
+            </div><!-- -->
+            <div id="settings" class="step slide hero-unit question begin" data-x="0" data-y="0" data-z="-500" data-rotate-y="180" data-scale="1">
+                <h1>hello world!</h1>
+                <button whereNext=begin class="btn btn-inverse">Ready</button>
+            </div><!-- #settings -->
             <div id="gender" class="step slide hero-unit question gender" data-x="0" data-y="1000">
                 <h2>Are you...</h2>
                 <img src="img/icons/male.svg">
@@ -48,7 +45,7 @@
                     <h3>or</h3>
                     <button whereNext=intermediate-one postIntermediate=intermediate-two class="btn btn-info female">Female</button>
                 </div>
-            </div>
+            </div><!-- -->
             
             <div id="intermediate-one" class="step slide hero-unit intermediate" data-x="0" data-y="2000"></div>
 
@@ -113,8 +110,9 @@
         <script src="js/plugins.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/impress.js"></script>
+        <script src="js/vendor/screenfull.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/fullscreen.js"></script>
+        <!--<script src="js/fullscreen.js"></script>-->
         <div id="fb-root"></div>
         <!-- twitter plugin js -->
         <script>
