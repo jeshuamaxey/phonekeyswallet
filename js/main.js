@@ -99,6 +99,8 @@ function enableTerminal() {
 	document.body.onkeydown = function(e){
 		e = e || window.event;
 		switch(e.keyCode) {
+		// handy site for key codes
+		// http://whatthekeycode.com/
 			case 13: //enter key
 				console.log('hit enter');
 				runCommand($('.current-line').html().substring(pkw.terminalprompt.length,$('.current-line').html().length));
